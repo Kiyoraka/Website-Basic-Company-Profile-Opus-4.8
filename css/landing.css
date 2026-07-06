@@ -382,3 +382,119 @@
   transition: background .16s;
 }
 .site-footer__login:hover { background: rgba(255, 255, 255, .12); }
+
+/* ============================================================
+   RESPONSIVE — viewport width drives the desktop -> mobile reflow
+   ============================================================ */
+
+/* ---- Tablet: tighten multi-column grids ---- */
+@media (max-width: 1024px) {
+  .hero__title { font-size: 54px; }
+  .services__grid { grid-template-columns: repeat(2, 1fr); }
+  .work-grid { grid-template-columns: repeat(2, 1fr); }
+  .team__grid { grid-template-columns: repeat(2, 1fr); }
+  .studio__inner { gap: 48px; }
+}
+
+/* ---- Mobile: single-column reflow + hamburger nav ---- */
+@media (max-width: 768px) {
+  :root { --pad-x: 20px; }
+
+  /* Header -> hamburger */
+  .site-nav,
+  .site-header__actions { display: none; }
+  .nav-toggle { display: flex; }
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 10px 20px 20px;
+    background: #fff;
+    border-top: 1px solid var(--line-2);
+  }
+  .mobile-menu[hidden] { display: none; }
+  .mobile-menu a {
+    font: 600 16px var(--font-body);
+    color: #3A4763;
+    text-decoration: none;
+    padding: 13px 0;
+    border-bottom: 1px solid var(--line-2);
+  }
+  .mobile-menu .mobile-menu__login { color: var(--blue); }
+  .mobile-menu .btn { margin-top: 14px; border-bottom: none; }
+  .mobile-menu .btn--primary { color: #fff; }
+
+  /* Hero */
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding-top: 36px;
+    padding-bottom: 56px;
+  }
+  .hero__title { font-size: 40px; }
+  .hero__lead { font-size: 16px; max-width: none; }
+  .hero__image { height: 340px; }
+  .hero__badge { left: 16px; bottom: 16px; padding: 14px 18px; gap: 12px; }
+  .hero__badge-icon { width: 40px; height: 40px; }
+  .hero__badge-num { font-size: 22px; }
+
+  /* Clients */
+  .clients__inner { gap: 24px; padding-top: 26px; padding-bottom: 26px; }
+  .clients__list { gap: 26px 30px; }
+
+  /* Section heads */
+  .section-head { flex-direction: column; align-items: flex-start; gap: 18px; margin-bottom: 32px; }
+  .section-head--center { align-items: center; }
+  .section-head__title { font-size: 30px; max-width: none; }
+  .section-head__lead { max-width: none; }
+
+  /* Services */
+  .services { padding-top: 64px; padding-bottom: 64px; }
+  .services__grid { grid-template-columns: 1fr; }
+  .service-card { min-height: 0; }
+
+  /* Stats */
+  .stats-band__grid { grid-template-columns: 1fr 1fr; gap: 28px 20px; padding-top: 56px; padding-bottom: 56px; }
+  .stat__value { font-size: 44px; }
+
+  /* Work */
+  .work { padding-top: 64px; padding-bottom: 64px; }
+  .work-grid { grid-template-columns: 1fr 1fr; gap: 24px 16px; }
+  .work-item__meta h3 { font-size: 17px; }
+
+  /* Studio */
+  .studio__inner { grid-template-columns: 1fr; gap: 36px; padding-top: 64px; padding-bottom: 64px; }
+  .studio__image { height: 300px; }
+  .studio__badge { right: 16px; top: 16px; }
+
+  /* Team */
+  .team { padding-top: 64px; padding-bottom: 64px; }
+  .team__grid { grid-template-columns: 1fr 1fr; }
+
+  /* Testimonials */
+  .testimonials__feature { padding: 64px 20px; }
+  .testimonials__quote { font-size: 22px; }
+  .testimonials__grid { grid-template-columns: 1fr; padding: 0 20px 64px; }
+
+  /* CTA */
+  .cta__inner { padding-top: 64px; padding-bottom: 64px; }
+  .cta__title { font-size: 34px; }
+  .cta__lead { font-size: 16px; }
+  .cta__details { gap: 16px; flex-direction: column; align-items: center; }
+
+  /* Footer */
+  .site-footer__top { grid-template-columns: 1fr 1fr; gap: 32px 24px; }
+  .site-footer__brand { grid-column: 1 / -1; }
+  .site-footer__legal { flex-direction: column; align-items: flex-start; gap: 16px; }
+}
+
+/* ---- Small phones: collapse remaining 2-col grids ---- */
+@media (max-width: 480px) {
+  .hero__title { font-size: 34px; }
+  .hero__cta { flex-direction: column; align-items: stretch; }
+  .hero__cta .btn { justify-content: center; }
+  .stats-band__grid { grid-template-columns: 1fr; }
+  .work-grid { grid-template-columns: 1fr; }
+  .team__grid { grid-template-columns: 1fr; }
+  .site-footer__top { grid-template-columns: 1fr; }
+}
