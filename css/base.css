@@ -1,0 +1,252 @@
+/* ============================================================
+   Meridian Platform — base.css
+   Design tokens, reset, typography, and shared components.
+   Faithfully reproduced from the "Meridian Platform" design.
+   ============================================================ */
+
+/* ---------- Design tokens ---------- */
+:root {
+  /* Brand */
+  --blue: #2457E5;
+  --blue-2: #4F7BFF;
+  --blue-hover: #1B47C4;
+  --blue-soft: #EAF1FF;
+
+  /* Ink / dark surfaces */
+  --ink: #0A1A33;
+  --ink-2: #0C1E3C;
+  --ink-3: #07142A;
+
+  /* Text */
+  --text: #0A1A33;
+  --body: #55627A;
+  --muted: #6B778F;
+  --faint: #93A0B8;
+
+  /* Surfaces & lines */
+  --card: #FFFFFF;
+  --bg: #F5F8FD;
+  --bg-2: #FAFBFD;
+  --bg-3: #F6F8FC;
+  --shell: #E9EDF4;
+  --line: #E9EDF4;
+  --line-2: #EDF0F6;
+  --line-3: #E1E7F0;
+
+  /* Status */
+  --green: #1F9D6B;
+  --green-soft: #E6F6EF;
+  --amber: #B0700A;
+  --amber-dot: #E0A013;
+  --amber-soft: #FCF2E0;
+  --danger: #E5484D;
+
+  /* Type */
+  --font-head: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Manrope', system-ui, -apple-system, sans-serif;
+
+  /* Shape */
+  --r-sm: 9px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-xl: 22px;
+
+  /* Elevation */
+  --shadow-sm: 0 1px 2px rgba(10, 26, 51, .03);
+  --shadow-card: 0 18px 40px -30px rgba(10, 26, 51, .5);
+  --shadow-blue: 0 16px 34px -16px rgba(36, 87, 229, .65);
+
+  /* Layout */
+  --container: 1240px;
+  --pad-x: 40px;
+}
+
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body { margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--card);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  line-height: 1.5;
+}
+
+img { display: block; max-width: 100%; }
+
+a { color: inherit; }
+
+button { font-family: inherit; }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-head);
+  margin: 0;
+  color: var(--text);
+}
+
+::selection { background: var(--blue); color: #fff; }
+
+/* Hide scrollbars on internal scroll regions (matches source) */
+[data-scroll]::-webkit-scrollbar { width: 0; height: 0; }
+[data-scroll] { scrollbar-width: none; -ms-overflow-style: none; }
+
+/* ---------- Animations ---------- */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.fade-up { animation: fadeUp .7s cubic-bezier(.2, .7, .2, 1) both; }
+.fade-up.delay { animation-delay: .1s; }
+.fade-in { animation: fadeIn .3s both; }
+
+/* ---------- Layout helpers ---------- */
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding-left: var(--pad-x);
+  padding-right: var(--pad-x);
+}
+
+.eyebrow {
+  font: 600 12px var(--font-body);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+/* ---------- Icons ---------- */
+.icon {
+  display: inline-flex;
+  flex: 0 0 auto;
+  line-height: 0;
+}
+.icon svg { display: block; }
+
+/* ---------- Brand mark ---------- */
+.brand { display: flex; align-items: center; gap: 11px; }
+.brand__logo {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--r-sm);
+  background: linear-gradient(135deg, var(--blue), var(--blue-2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: 800 16px var(--font-head);
+  color: #fff;
+  flex: 0 0 auto;
+}
+.brand__name {
+  font: 700 20px var(--font-head);
+  letter-spacing: -.02em;
+  color: var(--ink);
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: var(--r-md);
+  font: 600 15px var(--font-body);
+  padding: 14px 24px;
+  transition: all .18s ease;
+  white-space: nowrap;
+}
+.btn--sm { padding: 12px 20px; font-size: 14.5px; border-radius: 11px; }
+
+.btn--primary {
+  background: var(--blue);
+  color: #fff;
+  box-shadow: var(--shadow-blue);
+}
+.btn--primary:hover { background: var(--blue-hover); transform: translateY(-2px); }
+
+.btn--ghost {
+  background: #fff;
+  color: var(--ink);
+  border: 1px solid #DCE3EF;
+}
+.btn--ghost:hover { border-color: var(--ink); transform: translateY(-2px); }
+
+.btn--light {
+  background: #fff;
+  color: var(--ink);
+}
+.btn--light:hover { transform: translateY(-2px); box-shadow: 0 18px 40px -18px rgba(255, 255, 255, .4); }
+
+.btn--block { display: flex; width: 100%; justify-content: center; }
+
+.btn--text {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--body);
+  font: 600 14.5px var(--font-body);
+  transition: color .16s;
+}
+.btn--text:hover { color: var(--blue); }
+
+/* ---------- Pills / badges ---------- */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font: 700 12px var(--font-body);
+  padding: 5px 11px;
+  border-radius: 999px;
+}
+.pill__dot { width: 6px; height: 6px; border-radius: 50%; }
+.pill--published { color: var(--green); background: var(--green-soft); }
+.pill--published .pill__dot { background: var(--green); }
+.pill--draft { color: var(--amber); background: var(--amber-soft); }
+.pill--draft .pill__dot { background: var(--amber-dot); }
+.pill--delta { color: var(--green); background: var(--green-soft); }
+
+/* ---------- Filter chips ---------- */
+.chip {
+  padding: 8px 16px;
+  border-radius: 999px;
+  font: 600 13px var(--font-body);
+  cursor: pointer;
+  border: 1px solid #E0E6F1;
+  background: #fff;
+  color: var(--body);
+  transition: all .18s;
+  white-space: nowrap;
+}
+.chip:hover { border-color: #C7D3EA; }
+.chip.is-active { border-color: var(--ink); background: var(--ink); color: #fff; }
+
+/* ---------- Cards ---------- */
+.card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+}
+
+/* ---------- Star rating ---------- */
+.stars { display: inline-flex; gap: 3px; color: var(--blue); }
+
+/* ---------- Star line ---------- */
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
