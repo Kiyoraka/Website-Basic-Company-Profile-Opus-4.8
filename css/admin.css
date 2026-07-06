@@ -302,3 +302,85 @@ body.admin { background: var(--bg); }
 
 /* ---------- Mobile bottom nav (hidden on desktop) ---------- */
 .admin-bottomnav { display: none; }
+
+/* ============================================================
+   RESPONSIVE — sidebar -> bottom nav, tables -> stacked cards
+   ============================================================ */
+
+/* ---- Tablet: tighten grids ---- */
+@media (max-width: 1180px) {
+  .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .dash-split { grid-template-columns: 1fr; }
+}
+
+/* ---- Mobile: sidebar collapses to a fixed bottom nav ---- */
+@media (max-width: 900px) {
+  .admin-sidebar { display: none; }
+  .admin-shell { height: calc(100vh - 64px); }
+
+  .admin-bottomnav {
+    display: flex;
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    height: 64px;
+    background: #fff;
+    border-top: 1px solid #EAEEF5;
+    z-index: 50;
+    padding: 0 4px;
+  }
+  .bnav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font: 600 10.5px var(--font-body);
+    color: #93A3C2;
+    padding: 8px 0;
+  }
+  .bnav.is-active { color: var(--blue); }
+
+  .admin-topbar { padding: 0 18px; height: 64px; }
+  .admin-search { display: none; }
+  .admin-content { padding: 22px 18px 28px; }
+  .admin-panel__head { flex-direction: column; align-items: flex-start; gap: 14px; }
+  .member-grid { grid-template-columns: 1fr 1fr; }
+  .media-grid { grid-template-columns: 1fr 1fr; }
+
+  /* Data tables -> stacked label:value cards */
+  .data-table__head { display: none; }
+  .data-table__row,
+  .data-table--projects .data-table__row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 16px 18px;
+    align-items: stretch;
+  }
+  .data-table__edit { display: none; }
+  .data-table__row > span {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+  }
+  .data-table__row > span::before {
+    content: attr(data-label);
+    font: 600 12px var(--font-body);
+    color: #93A0B8;
+  }
+  .data-table__project { padding-bottom: 4px; }
+}
+
+/* ---- Small phones ---- */
+@media (max-width: 600px) {
+  .kpi-grid { grid-template-columns: 1fr; }
+  .member-grid { grid-template-columns: 1fr; }
+  .media-grid { grid-template-columns: 1fr; }
+  .settings-grid { grid-template-columns: 1fr; }
+  .admin-topbar__avatar { display: none; }
+  .admin-toolbar { align-items: stretch; }
+}
