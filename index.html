@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meridian — Architecture, Interiors & Urbanism</title>
+  <meta name="description" content="Meridian is an award-winning architecture and design studio crafting considered spaces that stand the test of time.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/landing.css">
+</head>
+<body class="landing">
+
+  <!-- ============ SITE HEADER ============ -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html" aria-label="Meridian home">
+        <span class="brand__logo">M</span>
+        <span class="brand__name">Meridian</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#work">Work</a>
+        <a href="#studio">Studio</a>
+        <a href="#services">Services</a>
+        <a href="#team">Team</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="site-header__actions">
+        <a class="btn--text" href="admin.html">Client login</a>
+        <a class="btn btn--primary btn--sm" href="#contact">Start a project</a>
+      </div>
+
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span class="icon" data-icon="menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></span>
+        <span class="icon" data-icon="close" hidden><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span>
+      </button>
+    </div>
+
+    <!-- Mobile dropdown menu -->
+    <div class="mobile-menu" hidden>
+      <a href="#work">Work</a>
+      <a href="#studio">Studio</a>
+      <a href="#services">Services</a>
+      <a href="#team">Team</a>
+      <a href="#contact">Contact</a>
+      <a class="mobile-menu__login" href="admin.html">Client login</a>
+      <a class="btn btn--primary btn--block" href="#contact">Start a project</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero container">
+      <div class="hero__content fade-up">
+        <span class="eyebrow">Architecture · Interiors · Urbanism</span>
+        <h1 class="hero__title">We design spaces that stand the test of time.</h1>
+        <p class="hero__lead">Meridian is an award-winning studio crafting considered architecture and interiors — from private homes to civic landmarks people return to for generations.</p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="#contact">Start a project
+            <span class="icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg></span>
+          </a>
+          <a class="btn btn--ghost" href="#work">View our work</a>
+        </div>
+        <div class="hero__rating">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <span>Recognised across <strong>32 design awards</strong> · RIBA &amp; AIA</span>
+        </div>
+      </div>
+
+      <div class="hero__media fade-up delay">
+        <div class="hero__image">
+          <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1000&q=80" alt="Modern white architectural facade with clean geometric lines" loading="eager">
+        </div>
+        <div class="hero__badge">
+          <span class="hero__badge-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
+          <div>
+            <div class="hero__badge-num">180+</div>
+            <div class="hero__badge-label">Projects delivered</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CLIENT LOGOS ============ -->
+    <section class="clients">
+      <div class="container clients__inner">
+        <span class="clients__label">Trusted by</span>
+        <div class="clients__list">
+          <span>NORTHBANK</span>
+          <span>CIVIC TRUST</span>
+          <span>ALDOUS</span>
+          <span>HARBOR CO.</span>
+          <span>KESTREL</span>
+          <span>VANTA</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section id="services" class="services container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">What we do</span>
+          <h2 class="section-head__title">Four disciplines, one continuous conversation.</h2>
+        </div>
+        <p class="section-head__lead">We keep architecture, interiors and delivery under one roof, so nothing gets lost between the drawing and the door.</p>
+      </div>
+      <div class="services__grid">
+        <article class="service-card">
+          <span class="service-card__no">01</span>
+          <h3>Architecture</h3>
+          <p>Full-service design from first sketch to final handover, grounded in place and purpose.</p>
+          <span class="service-card__arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
+        </article>
+        <article class="service-card">
+          <span class="service-card__no">02</span>
+          <h3>Interior Design</h3>
+          <p>Interiors that balance material warmth with the way people actually live and work.</p>
+          <span class="service-card__arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
+        </article>
+        <article class="service-card">
+          <span class="service-card__no">03</span>
+          <h3>Urban &amp; Masterplanning</h3>
+          <p>Frameworks that give streets, campuses and neighbourhoods room to grow well.</p>
+          <span class="service-card__arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
+        </article>
+        <article class="service-card">
+          <span class="service-card__no">04</span>
+          <h3>Project Delivery</h3>
+          <p>Rigorous site management and delivery — on brief, on time, and on budget.</p>
+          <span class="service-card__arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ STATS BAND ============ -->
+    <section class="stats-band">
+      <div class="container stats-band__grid">
+        <div class="stat"><div class="stat__value">24</div><div class="stat__label">Years in practice</div></div>
+        <div class="stat"><div class="stat__value">180+</div><div class="stat__label">Projects delivered</div></div>
+        <div class="stat"><div class="stat__value">32</div><div class="stat__label">Design awards</div></div>
+        <div class="stat"><div class="stat__value">14</div><div class="stat__label">Cities worldwide</div></div>
+      </div>
+    </section>
+
+    <!-- ============ WORK / GALLERY ============ -->
+    <section id="work" class="work container">
+      <div class="section-head section-head--work">
+        <div>
+          <span class="eyebrow">Selected work</span>
+          <h2 class="section-head__title">A portfolio built on trust.</h2>
+        </div>
+        <div class="filter-chips" role="tablist" aria-label="Filter projects">
+          <button class="chip is-active" data-filter="All">All</button>
+          <button class="chip" data-filter="Residential">Residential</button>
+          <button class="chip" data-filter="Cultural">Cultural</button>
+          <button class="chip" data-filter="Commercial">Commercial</button>
+          <button class="chip" data-filter="Workplace">Workplace</button>
+        </div>
+      </div>
+
+      <div class="work-grid">
+        <article class="work-item" data-cat="Residential">
+          <div class="work-item__image"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Harborline Residences" loading="lazy"></div>
+          <div class="work-item__meta"><h3>Harborline Residences</h3><span class="work-item__year">2024</span></div>
+          <span class="work-item__cat">Residential</span>
+        </article>
+        <article class="work-item" data-cat="Cultural">
+          <div class="work-item__image"><img src="https://images.unsplash.com/photo-1470723710355-95304d8aece4?auto=format&fit=crop&w=800&q=80" alt="Civic Hall Renewal" loading="lazy"></div>
+          <div class="work-item__meta"><h3>Civic Hall Renewal</h3><span class="work-item__year">2023</span></div>
+          <span class="work-item__cat">Cultural</span>
+        </article>
+        <article class="work-item" data-cat="Commercial">
+          <div class="work-item__image"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" alt="The Glasshouse" loading="lazy"></div>
+          <div class="work-item__meta"><h3>The Glasshouse</h3><span class="work-item__year">2023</span></div>
+          <span class="work-item__cat">Commercial</span>
+        </article>
+        <article class="work-item" data-cat="Cultural">
+          <div class="work-item__image"><img src="https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?auto=format&fit=crop&w=800&q=80" alt="Meridian Pavilion" loading="lazy"></div>
+          <div class="work-item__meta"><h3>Meridian Pavilion</h3><span class="work-item__year">2022</span></div>
+          <span class="work-item__cat">Cultural</span>
+        </article>
+        <article class="work-item" data-cat="Residential">
+          <div class="work-item__image"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Elm Court" loading="lazy"></div>
+          <div class="work-item__meta"><h3>Elm Court</h3><span class="work-item__year">2022</span></div>
+          <span class="work-item__cat">Residential</span>
+        </article>
+        <article class="work-item" data-cat="Workplace">
+          <div class="work-item__image"><img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80" alt="Northbank Offices" loading="lazy"></div>
+          <div class="work-item__meta"><h3>Northbank Offices</h3><span class="work-item__year">2021</span></div>
+          <span class="work-item__cat">Workplace</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ STUDIO / ABOUT ============ -->
+    <section id="studio" class="studio">
+      <div class="container studio__inner">
+        <div class="studio__content">
+          <span class="eyebrow">The studio</span>
+          <h2 class="section-head__title">A practice built around people, place and permanence.</h2>
+          <p class="studio__lead">Founded in 2001, Meridian brings architects, interior designers and urbanists together under one roof. We start every project by listening — to the client, the site, and the community it belongs to.</p>
+          <ul class="check-list">
+            <li><span class="check-list__mark"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Human-centred design, from brief to handover</li>
+            <li><span class="check-list__mark"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Sustainable and low-carbon by default</li>
+            <li><span class="check-list__mark"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>One team, accountable end-to-end</li>
+          </ul>
+          <a class="studio__link" href="#team">Meet the team
+            <span class="icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg></span>
+          </a>
+        </div>
+        <div class="studio__media">
+          <div class="studio__image"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="Meridian design studio interior" loading="lazy"></div>
+          <div class="studio__badge">
+            <div class="studio__badge-num">2001</div>
+            <div class="studio__badge-label">Founded in</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TEAM ============ -->
+    <section id="team" class="team container">
+      <div class="section-head section-head--center">
+        <span class="eyebrow">The people</span>
+        <h2 class="section-head__title">Led by partners who stay hands-on.</h2>
+      </div>
+      <div class="team__grid">
+        <article class="team-card"><div class="team-card__avatar">EM</div><h3>Elena Moreau</h3><p>Founding Partner</p></article>
+        <article class="team-card"><div class="team-card__avatar">DK</div><h3>David Kwan</h3><p>Design Director</p></article>
+        <article class="team-card"><div class="team-card__avatar">SR</div><h3>Sofia Ruiz</h3><p>Principal Architect</p></article>
+        <article class="team-card"><div class="team-card__avatar">TA</div><h3>Tom Adebayo</h3><p>Head of Interiors</p></article>
+      </div>
+    </section>
+
+    <!-- ============ TESTIMONIALS ============ -->
+    <section class="testimonials">
+      <div class="testimonials__feature">
+        <div class="testimonials__quote-mark">“</div>
+        <p class="testimonials__quote">Meridian understood our brief better than we did ourselves. The result is a civic building our whole community feels a genuine sense of ownership over.</p>
+        <div class="testimonials__author">
+          <div class="testimonials__name">Rachel Ford</div>
+          <div class="testimonials__role">Director, Civic Trust</div>
+        </div>
+      </div>
+      <div class="testimonials__grid">
+        <article class="testi-card">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <p>Precise, calm and deeply collaborative from concept to keys.</p>
+          <div class="testi-card__name">Marcus Bell</div>
+          <div class="testi-card__role">CEO, Aldous Group</div>
+        </article>
+        <article class="testi-card">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <p>They design for how people actually live. That is rare.</p>
+          <div class="testi-card__name">Priya Nair</div>
+          <div class="testi-card__role">Homeowner, Elm Court</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ CTA BAND ============ -->
+    <section id="contact" class="cta">
+      <div class="container cta__inner">
+        <span class="eyebrow cta__eyebrow">Start a project</span>
+        <h2 class="cta__title">Let's build something that lasts.</h2>
+        <p class="cta__lead">Tell us about your site, your brief and your ambitions. We reply to every enquiry within two working days.</p>
+        <a class="btn btn--light" href="#">Book a consultation
+          <span class="icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15"/><path d="M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <div class="cta__details">
+          <span><span class="cta__ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5 12 13l8.5-6.5"/></svg></span> studio@meridian.co</span>
+          <span><span class="cta__ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 3.5h3l1.8 4.5-2.2 1.4a11 11 0 0 0 5 5l1.4-2.2 4.5 1.8v3a2 2 0 0 1-2.2 2A18 18 0 0 1 4.5 5.7a2 2 0 0 1 2-2.2z"/></svg></span> +1 (415) 555-0138</span>
+          <span><span class="cta__ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6 7-11a7 7 0 1 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span> 24 Harbor St, San Francisco</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__top">
+        <div class="site-footer__brand">
+          <div class="brand">
+            <span class="brand__logo">M</span>
+            <span class="brand__name" style="color:#fff;">Meridian</span>
+          </div>
+          <p>An architecture and design studio building spaces that endure — considered, sustainable, and made to last.</p>
+        </div>
+        <div class="site-footer__col">
+          <div class="site-footer__heading">Studio</div>
+          <a href="#studio">About</a>
+          <a href="#team">Team</a>
+          <a href="#">Careers</a>
+          <a href="#">Journal</a>
+        </div>
+        <div class="site-footer__col">
+          <div class="site-footer__heading">Work</div>
+          <a href="#work">Residential</a>
+          <a href="#work">Cultural</a>
+          <a href="#work">Commercial</a>
+          <a href="#work">Workplace</a>
+        </div>
+        <div class="site-footer__col">
+          <div class="site-footer__heading">Connect</div>
+          <a href="#contact">Contact</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">Instagram</a>
+        </div>
+      </div>
+      <div class="site-footer__legal">
+        <span>© 2026 Meridian Studio. All rights reserved.</span>
+        <div class="site-footer__legal-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a class="site-footer__login" href="admin.html">Client login
+            <span class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
