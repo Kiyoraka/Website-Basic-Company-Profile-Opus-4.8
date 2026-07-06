@@ -31,15 +31,8 @@
 .site-nav a:hover { color: var(--blue); }
 .site-header__actions { display: flex; align-items: center; gap: 18px; }
 
-.nav-toggle {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: var(--ink);
-  padding: 4px;
-}
-.mobile-menu { display: none; }
+/* Mobile bottom nav — hidden on desktop, revealed under 768px */
+.landing-bottomnav { display: none; }
 
 /* ---------- Hero ---------- */
 .hero {
@@ -400,29 +393,34 @@
 @media (max-width: 768px) {
   :root { --pad-x: 20px; }
 
-  /* Header -> hamburger */
-  .site-nav,
-  .site-header__actions { display: none; }
-  .nav-toggle { display: flex; }
-  .mobile-menu {
+  /* Header: full nav + start-project hidden; compact login stays; bottom nav takes over */
+  .site-nav { display: none; }
+  .site-header__actions .hide-mobile { display: none; }
+
+  /* Fixed mobile bottom navigation */
+  body.landing { padding-bottom: 64px; }
+  .landing-bottomnav {
     display: flex;
-    flex-direction: column;
-    gap: 2px;
-    padding: 10px 20px 20px;
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    height: 64px;
     background: #fff;
     border-top: 1px solid var(--line-2);
+    z-index: 60;
+    padding: 0 4px;
   }
-  .mobile-menu[hidden] { display: none; }
-  .mobile-menu a {
-    font: 600 16px var(--font-body);
-    color: #3A4763;
+  .landing-bottomnav a {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
     text-decoration: none;
-    padding: 13px 0;
-    border-bottom: 1px solid var(--line-2);
+    font: 600 10.5px var(--font-body);
+    color: #93A3C2;
   }
-  .mobile-menu .mobile-menu__login { color: var(--blue); }
-  .mobile-menu .btn { margin-top: 14px; border-bottom: none; }
-  .mobile-menu .btn--primary { color: #fff; }
+  .landing-bottomnav a.is-active { color: var(--blue); }
 
   /* Hero */
   .hero {

@@ -1,42 +1,13 @@
 /* ============================================================
    Meridian Platform — main.js (landing)
-   Mobile hamburger menu, work-gallery filter, smooth anchor scroll.
+   Work-gallery filter, smooth anchor scroll, and the mobile
+   bottom navigation (scroll-to-top + scroll-spy active state).
    Vanilla JS, no dependencies.
    ============================================================ */
 (function () {
   'use strict';
 
   var header = document.querySelector('.site-header');
-
-  /* ---------- Mobile hamburger menu ---------- */
-  var toggle = document.querySelector('.nav-toggle');
-  var menu = document.querySelector('.mobile-menu');
-
-  function setMenu(open) {
-    if (!menu || !toggle) return;
-    if (open) { menu.removeAttribute('hidden'); }
-    else { menu.setAttribute('hidden', ''); }
-    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    var iconMenu = toggle.querySelector('[data-icon="menu"]');
-    var iconClose = toggle.querySelector('[data-icon="close"]');
-    if (iconMenu && iconClose) {
-      iconMenu.hidden = open;
-      iconClose.hidden = !open;
-    }
-  }
-
-  if (toggle && menu) {
-    toggle.addEventListener('click', function () {
-      setMenu(menu.hasAttribute('hidden'));
-    });
-    menu.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', function () { setMenu(false); });
-    });
-  }
-
-  window.addEventListener('resize', function () {
-    if (window.innerWidth > 768) setMenu(false);
-  });
 
   /* ---------- Work gallery filter ---------- */
   var chips = document.querySelectorAll('.filter-chips .chip');
@@ -67,4 +38,33 @@
       window.scrollTo({ top: top, behavior: 'smooth' });
     });
   });
+
+  /* ---------- Mobile bottom nav: Home scroll-to-top + scroll-spy ---------- */
+  var bottomLinks = document.querySelectorAll('.landing-bottomnav a');
+  var topLink = document.querySelector('.landing-bottomnav a[data-top]');
+
+  if (topLink) {
+    topLink.addEventListener('click', function (e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  function updateSpy() {
+    if (!bottomLinks.length) return;
+    var offset = (header ? header.offsetHeight : 0) + 24;
+    var pos = window.scrollY + offset;
+    var current = 'top';
+    ['work', 'studio', 'contact'].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el && el.offsetTop <= pos) current = id;
+    });
+    bottomLinks.forEach(function (a) {
+      a.classList.toggle('is-active', a.getAttribute('data-spy') === current);
+    });
+  }
+
+  window.addEventListener('scroll', updateSpy, { passive: true });
+  window.addEventListener('resize', updateSpy);
+  updateSpy();
 })();
