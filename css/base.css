@@ -79,6 +79,9 @@ body {
 
 img { display: block; max-width: 100%; }
 
+/* The hidden attribute must always win over component display rules */
+[hidden] { display: none !important; }
+
 a { color: inherit; }
 
 button { font-family: inherit; }
