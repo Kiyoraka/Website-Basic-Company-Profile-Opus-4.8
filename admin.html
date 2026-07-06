@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meridian CMS — Admin</title>
+  <meta name="description" content="Meridian content management dashboard.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin">
+  <div class="admin-shell">
+
+    <!-- ============ SIDEBAR ============ -->
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar__head">
+        <span class="brand__logo">M</span>
+        <span class="admin-sidebar__name">Meridian</span>
+        <span class="admin-sidebar__tag">CMS</span>
+      </div>
+      <nav class="admin-sidebar__nav" aria-label="Manage site">
+        <div class="admin-sidebar__label">Manage site</div>
+        <button class="side-link is-active" data-tab="dashboard" data-title="Dashboard">
+          <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/></svg></span>Dashboard
+        </button>
+        <button class="side-link" data-tab="projects" data-title="Projects">
+          <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8a2 2 0 0 1 2-2h4l2 2.5h8a2 2 0 0 1 2 2V18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>Projects
+        </button>
+        <button class="side-link" data-tab="team" data-title="Team">
+          <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20v-1a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v1"/><circle cx="9.5" cy="8" r="3.5"/><path d="M21 20v-1a4 4 0 0 0-3-3.87M16.5 4.6a3.5 3.5 0 0 1 0 6.8"/></svg></span>Team
+        </button>
+        <button class="side-link" data-tab="media" data-title="Media library">
+          <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="10" r="1.8"/><path d="M21 15l-5-4.5L6 20"/></svg></span>Media
+        </button>
+        <button class="side-link" data-tab="settings" data-title="Settings">
+          <span class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h9M17 8h3M4 16h3M11 16h9"/><circle cx="15" cy="8" r="2"/><circle cx="9" cy="16" r="2"/></svg></span>Settings
+        </button>
+      </nav>
+      <div class="admin-sidebar__foot">
+        <div class="admin-user">
+          <div class="admin-user__avatar">EM</div>
+          <div class="admin-user__meta">
+            <div class="admin-user__name">Elena Moreau</div>
+            <div class="admin-user__role">Founding Partner</div>
+          </div>
+          <a class="admin-user__logout" href="index.html" aria-label="Log out">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5.5A1.5 1.5 0 0 1 4 19.5v-15A1.5 1.5 0 0 1 5.5 3H9"/><path d="M16 16l4-4-4-4M20 12H9"/></svg>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ============ MAIN ============ -->
+    <main class="admin-main">
+      <header class="admin-topbar">
+        <div class="admin-topbar__title">
+          <div class="admin-topbar__eyebrow">Meridian CMS</div>
+          <h1 id="adminTitle">Dashboard</h1>
+        </div>
+        <div class="admin-topbar__tools">
+          <div class="admin-search">
+            <span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span>
+            <input type="search" placeholder="Search content…" aria-label="Search content">
+          </div>
+          <a class="btn--outline" href="index.html">View site
+            <span class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
+          </a>
+          <button class="admin-iconbtn" type="button" aria-label="Notifications">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8.5a6 6 0 1 0-12 0c0 6.5-2.5 8.5-2.5 8.5h17S18 15 18 8.5"/><path d="M13.7 20.5a2 2 0 0 1-3.4 0"/></svg>
+            <span class="admin-iconbtn__dot"></span>
+          </button>
+          <div class="admin-topbar__avatar">EM</div>
+        </div>
+      </header>
+
+      <div class="admin-content" data-scroll>
+
+        <!-- ---------- DASHBOARD ---------- -->
+        <section class="admin-panel" id="tab-dashboard">
+          <div class="admin-panel__head">
+            <div>
+              <h2>Good morning, Elena</h2>
+              <p>Here's what's happening across your site today.</p>
+            </div>
+            <button class="btn btn--primary btn--sm" type="button">
+              <span class="icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span> New project
+            </button>
+          </div>
+
+          <!-- KPI cards -->
+          <div class="kpi-grid">
+            <div class="kpi">
+              <div class="kpi__top"><span class="kpi__label">Page views</span><span class="kpi__icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></svg></span></div>
+              <div class="kpi__value">24.8k</div>
+              <div class="kpi__foot"><span class="pill pill--delta">↑ +12.4%</span><span class="kpi__note">vs last month</span></div>
+            </div>
+            <div class="kpi">
+              <div class="kpi__top"><span class="kpi__label">New inquiries</span><span class="kpi__icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5 12 13l8.5-6.5"/></svg></span></div>
+              <div class="kpi__value">86</div>
+              <div class="kpi__foot"><span class="pill pill--delta">↑ +9.1%</span><span class="kpi__note">vs last month</span></div>
+            </div>
+            <div class="kpi">
+              <div class="kpi__top"><span class="kpi__label">Projects published</span><span class="kpi__icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8a2 2 0 0 1 2-2h4l2 2.5h8a2 2 0 0 1 2 2V18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span></div>
+              <div class="kpi__value">32</div>
+              <div class="kpi__foot"><span class="pill pill--delta">↑ +2</span><span class="kpi__note">vs last month</span></div>
+            </div>
+            <div class="kpi">
+              <div class="kpi__top"><span class="kpi__label">Media items</span><span class="kpi__icon"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="10" r="1.8"/><path d="M21 15l-5-4.5L6 20"/></svg></span></div>
+              <div class="kpi__value">412</div>
+              <div class="kpi__foot"><span class="pill pill--delta">↑ +18</span><span class="kpi__note">vs last month</span></div>
+            </div>
+          </div>
+
+          <!-- Chart + activity -->
+          <div class="dash-split">
+            <div class="card panel-card">
+              <div class="panel-card__head">
+                <div><h3>Site visits</h3><span class="panel-card__sub">Last 7 months</span></div>
+                <div class="panel-card__stat"><div class="panel-card__num">35.4k</div><span class="panel-card__delta">↑ 18.2%</span></div>
+              </div>
+              <div class="chart">
+                <div class="chart__col"><div class="chart__bar" style="height:78px;"></div><span>Jan</span></div>
+                <div class="chart__col"><div class="chart__bar" style="height:100px;"></div><span>Feb</span></div>
+                <div class="chart__col"><div class="chart__bar" style="height:92px;"></div><span>Mar</span></div>
+                <div class="chart__col"><div class="chart__bar" style="height:126px;"></div><span>Apr</span></div>
+                <div class="chart__col"><div class="chart__bar" style="height:148px;"></div><span>May</span></div>
+                <div class="chart__col"><div class="chart__bar" style="height:136px;"></div><span>Jun</span></div>
+                <div class="chart__col"><div class="chart__bar chart__bar--max" style="height:180px;"></div><span>Jul</span></div>
+              </div>
+            </div>
+
+            <div class="card panel-card">
+              <div class="panel-card__head">
+                <h3>Recent activity</h3>
+                <span class="panel-card__link">View all</span>
+              </div>
+              <ul class="activity">
+                <li><span class="activity__icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5 12 13l8.5-6.5"/></svg></span><div><div class="activity__title">New inquiry from Rachel Ford</div><div class="activity__meta">Civic Trust · 12m ago</div></div></li>
+                <li><span class="activity__icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="10" r="1.8"/><path d="M21 15l-5-4.5L6 20"/></svg></span><div><div class="activity__title">8 photos added to “The Glasshouse”</div><div class="activity__meta">Media · 1h ago</div></div></li>
+                <li><span class="activity__icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8a2 2 0 0 1 2-2h4l2 2.5h8a2 2 0 0 1 2 2V18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span><div><div class="activity__title">“Elm Court” moved to Published</div><div class="activity__meta">Projects · 3h ago</div></div></li>
+                <li><span class="activity__icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M5 20v-.5a7 7 0 0 1 14 0v.5"/></svg></span><div><div class="activity__title">Tom Adebayo joined the team</div><div class="activity__meta">Team · Yesterday</div></div></li>
+                <li><span class="activity__icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5l2.6 5.3 5.8.8-4.2 4.1 1 5.8-5.2-2.8-5.2 2.8 1-5.8L3.6 9.6l5.8-.8z"/></svg></span><div><div class="activity__title">New 5-star testimonial approved</div><div class="activity__meta">Testimonials · Yesterday</div></div></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Recent content table -->
+          <div class="card table-card">
+            <div class="table-card__head">
+              <h3>Recent content</h3>
+              <button class="btn--link" type="button" data-goto="projects">Manage all</button>
+            </div>
+            <div class="data-table">
+              <div class="data-table__head">
+                <span>Project</span><span>Category</span><span>Status</span><span>Updated</span><span></span>
+              </div>
+              <div class="data-table__row">
+                <span class="data-table__name" data-label="Project">Harborline Residences</span>
+                <span data-label="Category">Residential</span>
+                <span data-label="Status"><span class="pill pill--published"><span class="pill__dot"></span>Published</span></span>
+                <span data-label="Updated">Jun 28</span>
+                <span class="data-table__edit"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2 2 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span>
+              </div>
+              <div class="data-table__row">
+                <span class="data-table__name" data-label="Project">Civic Hall Renewal</span>
+                <span data-label="Category">Cultural</span>
+                <span data-label="Status"><span class="pill pill--published"><span class="pill__dot"></span>Published</span></span>
+                <span data-label="Updated">Jun 21</span>
+                <span class="data-table__edit"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2 2 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span>
+              </div>
+              <div class="data-table__row">
+                <span class="data-table__name" data-label="Project">The Glasshouse</span>
+                <span data-label="Category">Commercial</span>
+                <span data-label="Status"><span class="pill pill--draft"><span class="pill__dot"></span>Draft</span></span>
+                <span data-label="Updated">Jun 18</span>
+                <span class="data-table__edit"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2 2 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span>
+              </div>
+              <div class="data-table__row">
+                <span class="data-table__name" data-label="Project">Meridian Pavilion</span>
+                <span data-label="Category">Cultural</span>
+                <span data-label="Status"><span class="pill pill--published"><span class="pill__dot"></span>Published</span></span>
+                <span data-label="Updated">May 30</span>
+                <span class="data-table__edit"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2 2 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span>
+              </div>
+              <div class="data-table__row">
+                <span class="data-table__name" data-label="Project">Elm Court</span>
+                <span data-label="Category">Residential</span>
+                <span data-label="Status"><span class="pill pill--published"><span class="pill__dot"></span>Published</span></span>
+                <span data-label="Updated">May 12</span>
+                <span class="data-table__edit"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2 2 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span>
+              </div>
+              <div class="data-table__row">
+                <span class="data-table__name" data-label="Project">Northbank Offices</span>
+                <span data-label="Category">Workplace</span>
+                <span data-label="Status"><span class="pill pill--draft"><span class="pill__dot"></span>Draft</span></span>
+                <span data-label="Updated">Apr 26</span>
+                <span class="data-table__edit"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2 2 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ---------- PROJECTS ---------- -->
+        <section class="admin-panel" id="tab-projects" hidden>
+          <div class="admin-toolbar">
+            <div class="filter-chips" aria-label="Filter projects">
+              <button class="chip is-active" data-filter="All">All</button>
+              <button class="chip" data-filter="Residential">Residential</button>
+              <button class="chip" data-filter="Cultural">Cultural</button>
+              <button class="chip" data-filter="Commercial">Commercial</button>
+              <button class="chip" data-filter="Workplace">Workplace</button>
+            </div>
+            <button class="btn btn--primary btn--sm" type="button">
+              <span class="icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span> New project
+            </button>
+          </div>
+          <div class="card table-card">
+            <div class="data-table data-table--projects">
+              <div class="data-table__head">
+                <span>Project</span><span>Category</span><span>Status</span><span>Updated</span><span></span>
+              </div>
+              <div class="data-table__row" data-cat="Residential">
+                <div class="data-table__project" data-label="Project"><div class="data-table__thumb"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=200&q=80" alt=""></div><div><div class="data-table__ptitle">Harborline Residences</div><div class="data-table__pyear">2024</div></div></div>
+                <span data-label="Category">Residential</span>
+                <span data-label="Status"><span class="pill pill--published"><span class="pill__dot"></span>Published</span></span>
+                <span data-label="Updated">Jun 28</span>
+                <span class="data-table__edit"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2 2 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span>
+              </div>
+              <div class="data-table__row" data-cat="Cultural">
+                <div class="data-table__project" data-label="Project"><div class="data-table__thumb"><img src="https://images.unsplash.com/photo-1470723710355-95304d8aece4?auto=format&fit=crop&w=200&q=80" alt=""></div><div><div class="data-table__ptitle">Civic Hall Renewal</div><div class="data-table__pyear">2023</div></div></div>
+                <span data-label="Category">Cultural</span>
+                <span data-label="Status"><span class="pill pill--published"><span class="pill__dot"></span>Published</span></span>
+                <span data-label="Updated">Jun 21</span>
+                <span class="data-table__edit"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2 2 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span>
+              </div>
+              <div class="data-table__row" data-cat="Commercial">
+                <div class="data-table__project" data-label="Project"><div class="data-table__thumb"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=200&q=80" alt=""></div><div><div class="data-table__ptitle">The Glasshouse</div><div class="data-table__pyear">2023</div></div></div>
+                <span data-label="Category">Commercial</span>
+                <span data-label="Status"><span class="pill pill--draft"><span class="pill__dot"></span>Draft</span></span>
+                <span data-label="Updated">Jun 18</span>
+                <span class="data-table__edit"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2 2 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span>
+              </div>
+              <div class="data-table__row" data-cat="Cultural">
+                <div class="data-table__project" data-label="Project"><div class="data-table__thumb"><img src="https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?auto=format&fit=crop&w=200&q=80" alt=""></div><div><div class="data-table__ptitle">Meridian Pavilion</div><div class="data-table__pyear">2022</div></div></div>
+                <span data-label="Category">Cultural</span>
+                <span data-label="Status"><span class="pill pill--published"><span class="pill__dot"></span>Published</span></span>
+                <span data-label="Updated">May 30</span>
+                <span class="data-table__edit"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2 2 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span>
+              </div>
+              <div class="data-table__row" data-cat="Residential">
+                <div class="data-table__project" data-label="Project"><div class="data-table__thumb"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=200&q=80" alt=""></div><div><div class="data-table__ptitle">Elm Court</div><div class="data-table__pyear">2022</div></div></div>
+                <span data-label="Category">Residential</span>
+                <span data-label="Status"><span class="pill pill--published"><span class="pill__dot"></span>Published</span></span>
+                <span data-label="Updated">May 12</span>
+                <span class="data-table__edit"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2 2 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span>
+              </div>
+              <div class="data-table__row" data-cat="Workplace">
+                <div class="data-table__project" data-label="Project"><div class="data-table__thumb"><img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=200&q=80" alt=""></div><div><div class="data-table__ptitle">Northbank Offices</div><div class="data-table__pyear">2021</div></div></div>
+                <span data-label="Category">Workplace</span>
+                <span data-label="Status"><span class="pill pill--draft"><span class="pill__dot"></span>Draft</span></span>
+                <span data-label="Updated">Apr 26</span>
+                <span class="data-table__edit"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2 2 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ---------- TEAM ---------- -->
+        <section class="admin-panel" id="tab-team" hidden>
+          <div class="admin-toolbar admin-toolbar--split">
+            <p class="admin-toolbar__note">Manage the people shown on your public team page.</p>
+            <button class="btn btn--primary btn--sm" type="button">
+              <span class="icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span> Invite member
+            </button>
+          </div>
+          <div class="member-grid">
+            <div class="card member-card">
+              <div class="member-card__top"><div class="member-card__avatar">EM</div><div><div class="member-card__name">Elena Moreau</div><div class="member-card__role">Founding Partner</div></div></div>
+              <div class="member-card__foot"><span class="pill pill--published"><span class="pill__dot"></span>Active</span><span class="member-card__edit"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2 2 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span></div>
+            </div>
+            <div class="card member-card">
+              <div class="member-card__top"><div class="member-card__avatar">DK</div><div><div class="member-card__name">David Kwan</div><div class="member-card__role">Design Director</div></div></div>
+              <div class="member-card__foot"><span class="pill pill--published"><span class="pill__dot"></span>Active</span><span class="member-card__edit"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2 2 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span></div>
+            </div>
+            <div class="card member-card">
+              <div class="member-card__top"><div class="member-card__avatar">SR</div><div><div class="member-card__name">Sofia Ruiz</div><div class="member-card__role">Principal Architect</div></div></div>
+              <div class="member-card__foot"><span class="pill pill--published"><span class="pill__dot"></span>Active</span><span class="member-card__edit"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2 2 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span></div>
+            </div>
+            <div class="card member-card">
+              <div class="member-card__top"><div class="member-card__avatar">TA</div><div><div class="member-card__name">Tom Adebayo</div><div class="member-card__role">Head of Interiors</div></div></div>
+              <div class="member-card__foot"><span class="pill pill--published"><span class="pill__dot"></span>Active</span><span class="member-card__edit"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2 2 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ---------- MEDIA ---------- -->
+        <section class="admin-panel" id="tab-media" hidden>
+          <div class="admin-toolbar admin-toolbar--split">
+            <p class="admin-toolbar__note">Drop photos into any slot — they publish straight to your gallery.</p>
+            <button class="btn btn--primary btn--sm" type="button">
+              <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V4"/><path d="M7.5 8.5 12 4l4.5 4.5"/><path d="M5 20h14"/></svg></span> Upload media
+            </button>
+          </div>
+          <div class="media-grid">
+            <div class="card media-card"><div class="media-card__img"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=500&q=80" alt="Harborline Residences"></div><div class="media-card__meta"><div class="media-card__title">Harborline Residences</div><div class="media-card__sub">Residential · JPG</div></div></div>
+            <div class="card media-card"><div class="media-card__img"><img src="https://images.unsplash.com/photo-1470723710355-95304d8aece4?auto=format&fit=crop&w=500&q=80" alt="Civic Hall Renewal"></div><div class="media-card__meta"><div class="media-card__title">Civic Hall Renewal</div><div class="media-card__sub">Cultural · JPG</div></div></div>
+            <div class="card media-card"><div class="media-card__img"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=500&q=80" alt="The Glasshouse"></div><div class="media-card__meta"><div class="media-card__title">The Glasshouse</div><div class="media-card__sub">Commercial · JPG</div></div></div>
+            <div class="card media-card"><div class="media-card__img"><img src="https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?auto=format&fit=crop&w=500&q=80" alt="Meridian Pavilion"></div><div class="media-card__meta"><div class="media-card__title">Meridian Pavilion</div><div class="media-card__sub">Cultural · JPG</div></div></div>
+            <div class="card media-card"><div class="media-card__img"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=500&q=80" alt="Elm Court"></div><div class="media-card__meta"><div class="media-card__title">Elm Court</div><div class="media-card__sub">Residential · JPG</div></div></div>
+            <div class="card media-card"><div class="media-card__img"><img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=500&q=80" alt="Northbank Offices"></div><div class="media-card__meta"><div class="media-card__title">Northbank Offices</div><div class="media-card__sub">Workplace · JPG</div></div></div>
+          </div>
+        </section>
+
+        <!-- ---------- SETTINGS ---------- -->
+        <section class="admin-panel" id="tab-settings" hidden>
+          <div class="settings">
+            <div class="card settings-card">
+              <h3>Site details</h3>
+              <p class="settings-card__sub">This information appears across your public website.</p>
+              <div class="settings-grid">
+                <label class="field"><span>Site name</span><input type="text" value="Meridian Studio"></label>
+                <label class="field"><span>Contact email</span><input type="email" value="studio@meridian.co"></label>
+                <label class="field field--full"><span>Tagline</span><input type="text" value="We design spaces that stand the test of time."></label>
+              </div>
+            </div>
+            <div class="card settings-card">
+              <h3>Appearance</h3>
+              <p class="settings-card__sub">Brand colour used for buttons, links and highlights.</p>
+              <div class="swatches">
+                <span class="swatch swatch--active" style="background:#2457E5;"></span>
+                <span class="swatch" style="background:#0A1A33;"></span>
+                <span class="swatch" style="background:#1F9D6B;"></span>
+                <span class="swatch" style="background:#7A5AF8;"></span>
+                <span class="swatch" style="background:#E5484D;"></span>
+              </div>
+            </div>
+            <div class="settings-actions">
+              <button class="btn--outline" type="button">Cancel</button>
+              <button class="btn btn--primary btn--sm" type="button">
+                <span class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span> Save changes
+              </button>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- ============ MOBILE BOTTOM NAV ============ -->
+  <nav class="admin-bottomnav" aria-label="Sections">
+    <button class="bnav" data-tab="dashboard" data-title="Dashboard">
+      <span class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/></svg></span><span>Home</span>
+    </button>
+    <button class="bnav" data-tab="projects" data-title="Projects">
+      <span class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8a2 2 0 0 1 2-2h4l2 2.5h8a2 2 0 0 1 2 2V18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span><span>Projects</span>
+    </button>
+    <button class="bnav" data-tab="team" data-title="Team">
+      <span class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20v-1a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v1"/><circle cx="9.5" cy="8" r="3.5"/><path d="M21 20v-1a4 4 0 0 0-3-3.87M16.5 4.6a3.5 3.5 0 0 1 0 6.8"/></svg></span><span>Team</span>
+    </button>
+    <button class="bnav" data-tab="media" data-title="Media library">
+      <span class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="10" r="1.8"/><path d="M21 15l-5-4.5L6 20"/></svg></span><span>Media</span>
+    </button>
+    <button class="bnav" data-tab="settings" data-title="Settings">
+      <span class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h9M17 8h3M4 16h3M11 16h9"/><circle cx="15" cy="8" r="2"/><circle cx="9" cy="16" r="2"/></svg></span><span>Settings</span>
+    </button>
+  </nav>
+
+  <script src="js/admin.js" defer></script>
+</body>
+</html>
