@@ -363,18 +363,6 @@
 .site-footer__legal-links { display: flex; align-items: center; gap: 26px; }
 .site-footer__legal-links > a { font: 500 13.5px var(--font-body); color: #8293B2; text-decoration: none; transition: color .16s; }
 .site-footer__legal-links > a:hover { color: #fff; }
-.site-footer__login {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  background: rgba(255, 255, 255, .06);
-  border: 1px solid rgba(255, 255, 255, .12);
-  color: #fff !important;
-  padding: 8px 14px;
-  border-radius: var(--r-sm);
-  transition: background .16s;
-}
-.site-footer__login:hover { background: rgba(255, 255, 255, .12); }
 
 /* ============================================================
    RESPONSIVE — viewport width drives the desktop -> mobile reflow
